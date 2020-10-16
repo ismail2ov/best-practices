@@ -12,4 +12,9 @@ public class PersonImpl implements Person {
     public House getHouse() {
         return house;
     }
+
+    @Override
+    public String getZipCode() {
+        return house.getZipCode();
+    }
 }

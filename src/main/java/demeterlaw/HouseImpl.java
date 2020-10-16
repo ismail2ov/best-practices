@@ -13,4 +13,9 @@ public class HouseImpl implements House {
     public Address getAddress() {
         return address;
     }
+
+    @Override
+    public String getZipCode() {
+        return address.getZipCode();
+    }
 }
