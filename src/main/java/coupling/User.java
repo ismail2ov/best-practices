@@ -2,7 +2,7 @@ package coupling;
 
 public class User {
 
-    public String name;
+    private String name;
 
     public String getName() {
         if (name != null) {
@@ -14,7 +14,7 @@ public class User {
 
     public void setName(String s) {
         if (s == null) {
-            System.out.println("You can't initialized name to a null");
+            System.out.println("You can't initialize name to a null");
         }
     }
 

@@ -4,8 +4,8 @@ public class Application {
 
     public static void main(String... args) {
         User user = new User();
-        user.name = null;
+        user.setName(null);
 
-        System.out.println("Name is " + user.name);
+        System.out.println("Name is " + user.getName());
     }
 }
