@@ -13,7 +13,7 @@ public class Account {
     public Account() {
         this.balance = 0;
         this.lastTransactionDate = null;
-        this.transactionList = new ArrayList<Transaction>();
+        this.transactionList = new ArrayList<>();
     }
 
     public double getBalance() {
@@ -25,19 +25,31 @@ public class Account {
     }
 
     public void credit(double amount) {
-        balance -= amount;
-        Calendar calendar = Calendar.getInstance();
-        Date date = calendar.getTime();
+        transaction(-amount);
+    }
+
+    public void debit(double amount) {
+        transaction(amount);
+    }
+
+    private void updateBalance(double amount) {
+        balance += amount;
+    }
+
+    private void transaction(double amount) {
+        updateBalance(amount);
+        registerTransaction(amount);
+    }
+
+    private void registerTransaction(double amount) {
+        Date date = getDate();
         transactionList.add(new Transaction(date, -amount));
         lastTransactionDate = date;
     }
 
-    public void debit(double amount) {
-        balance += amount;
+    private Date getDate() {
         Calendar calendar = Calendar.getInstance();
-        Date date = calendar.getTime();
-        transactionList.add(new Transaction(date, amount));
-        lastTransactionDate = date;
+        return calendar.getTime();
     }
 
 }
