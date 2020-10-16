@@ -12,8 +12,8 @@ public class Checkout {
     }
 
     public void validate() throws Exception {
-        cart.validateCart();
-        delivery.validateDelivery();
-        payment.validatePayment();
+        cart.validate();
+        delivery.validate();
+        payment.validate();
     }
 }

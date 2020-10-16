@@ -10,7 +10,7 @@ public class Delivery {
         return true;
     }
 
-    void validateDelivery() throws Exception {
+    void validate() throws Exception {
         if (!checkAddress()) {
             throw new Exception("Invalid address");
         }

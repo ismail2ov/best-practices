@@ -10,7 +10,7 @@ public class Payment {
         return true;
     }
 
-    void validatePayment() throws Exception {
+    void validate() throws Exception {
         if (!hasPaymentMethods()) {
             throw new Exception("No payment methods");
         }

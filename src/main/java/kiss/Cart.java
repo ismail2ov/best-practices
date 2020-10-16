@@ -16,7 +16,7 @@ public class Cart {
         return true;
     }
 
-    void validateCart() throws Exception {
+    void validate() throws Exception {
         if (getNumProducts() <= 0) {
             throw new Exception("The cart is empty");
         }
